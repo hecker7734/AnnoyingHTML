@@ -1,5 +1,8 @@
 let newWindow = null;
 let messageInterval = null;
+let b = null;
+let a = null;
+
 
 function onBeforeUnload(e) {
     if (true) {
@@ -19,10 +22,10 @@ window.addEventListener('beforeunload', onBeforeUnload);
 setTimeout(function() {
     let b = window.open("",'_blank')
     let a = window.open("",'_blank')
-    alert("If two windows did not open, the webpage has errored, make sure to allow popup access, :)")
     if(a == null || b == null ) {
         openCoveringWindow = function() {}
     }
+    alert("If two windows did not open, the webpage has errored, make sure to allow popup access, :)")
 },1000)
 
 
