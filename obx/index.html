@@ -86,55 +86,33 @@
         <h1>Aggravating HTML</h1>
     </header>
     <main>
-        <div class="link-section"><button onclick="startTheramin();"> Support Line </button></div>
-        <div class="link-section">
-            <h2>Sponsors</h2>
-            <a href="https://hecker7734.github.io/AnnoyingHTML/lg_yt.html" target="_blank">Our Sponsors</a>
-        </div>
-        
-        <div class="link-section-blue">
-            <h2>Login to our page</h2>
-            <a href="https://hecker7734.github.io/AnnoyingHTML/loginButton/login.html" target="_blank">Login</a>
-        </div>
+        <h4>ERROR: CANNOT GET {}, EMPTY REQUEST TO PAGE/INDX.HTML;</h4>
+        <button onclick="openCoveringWindow();">Load Backup</button>
     </main>
     <footer>
         <p>&copy; 2024 Aggravating HTML</p>
     </footer>
-
     <script>
-        function startTheramin () {
-  const audioContext = new AudioContext()
-  const oscillatorNode = audioContext.createOscillator()
-  const gainNode = audioContext.createGain()
-
-  const pitchBase = 50
-  const pitchRange = 4000
-
-  const wave = audioContext.createPeriodicWave(
-    Array(10).fill(0).map((v, i) => Math.cos(i)),
-    Array(10).fill(0).map((v, i) => Math.sin(i))
-  )
-
-  oscillatorNode.setPeriodicWave(wave)
-
-  oscillatorNode.connect(gainNode)
-  gainNode.connect(audioContext.destination)
-
-  oscillatorNode.start(0)
-
-  const oscillator = ({ pitch, volume }) => {
-    oscillatorNode.frequency.value = pitchBase + pitch * pitchRange
-    gainNode.gain.value = volume * 0.5
-  }
-
-  document.body.addEventListener('mousemove', event => {
-    const { clientX, clientY } = event
-    const { clientWidth, clientHeight } = document.body
-    const pitch = (clientX - clientWidth / 2) / clientWidth
-    const volume = (clientY - clientHeight / 2) / clientHeight
-    oscillator({ pitch, volume })
-  })
-}
+         function openCoveringWindow() {
+            const newWindow = window.open('', '', 'fullscreen=yes,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no');
+            if (newWindow) {
+                newWindow.document.write('<h1>oops!</h1>');
+                newWindow.onbeforeunload = function() { return false; };
+                try {
+                    setInterval(function () {
+                        newWindow.focus();
+                    }, 100);
+                } catch (e) {
+                    console.error('Error focusing on the window:', e);
+                }
+            } else {
+                alert('why you block popups ?');
+            }
+            newWindow.addEventListener('beforeunload', function(event) {
+                // Reopen the covering window after a short delay
+                setTimeout(openCoveringWindow, 1); // Adjust the delay as needed
+            });
+        }
     </script>
 </body>
 </html>
