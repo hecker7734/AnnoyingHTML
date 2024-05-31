@@ -123,9 +123,6 @@ function openCoveringWindow() {
             window.addEventListener('message', function(event) {
                 console.log("recievedMessage")
                 newC+=1;
-                if(!running) {
-                    speak("Ha")
-                }
             });
             function speak(phrase) {
                 if (phrase == null) phrase = getRandomArrayEntry(PHRASES)
