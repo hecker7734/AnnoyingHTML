@@ -1,5 +1,18 @@
 let newWindow = null;
-
+function onBeforeUnload(e) {
+    if (true) {
+      e.preventDefault();
+      e.returnValue = 'nooo';
+      speak('why leave now when you can stay on this website forever')
+      gotoUrl("https://hecker7734.github.io/AnnoyingHTML/loginButton/login.html")
+      return;
+    }
+  }
+  function speak (phrase) {
+    if (phrase == null) phrase = getRandomArrayEntry(PHRASES)
+    window.speechSynthesis.speak(new window.SpeechSynthesisUtterance(phrase))
+  }
+  
 function openCoveringWindow() {
     const screenWidth = screen.availWidth;
     const screenHeight = screen.availHeight;
