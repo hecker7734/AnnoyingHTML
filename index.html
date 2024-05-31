@@ -71,18 +71,55 @@
         <h1>Aggravating HTML</h1>
     </header>
     <main>
+        <div class="link-section"><button onclick="startTheramin();"> Support Line </button></div>
         <div class="link-section">
-            <h2>Annoying Auto-Playing Video</h2>
+            <h2>Sponsors</h2>
             <a href="https://hecker7734.github.io/annoying_html/lg_yt.html" target="_blank">Our Sponsors</a>
         </div>
         
         <div class="link-section">
-            <h2>Fake Login Button</h2>
+            <h2>Login to our page</h2>
             <a href="https://hecker7734.github.io/annoying_html/loginButton/login.html" target="_blank">Login</a>
         </div>
     </main>
     <footer>
         <p>&copy; 2024 Aggravating HTML</p>
     </footer>
+
+    <script>
+        function startTheramin () {
+  const audioContext = new AudioContext()
+  const oscillatorNode = audioContext.createOscillator()
+  const gainNode = audioContext.createGain()
+
+  const pitchBase = 50
+  const pitchRange = 4000
+
+  const wave = audioContext.createPeriodicWave(
+    Array(10).fill(0).map((v, i) => Math.cos(i)),
+    Array(10).fill(0).map((v, i) => Math.sin(i))
+  )
+
+  oscillatorNode.setPeriodicWave(wave)
+
+  oscillatorNode.connect(gainNode)
+  gainNode.connect(audioContext.destination)
+
+  oscillatorNode.start(0)
+
+  const oscillator = ({ pitch, volume }) => {
+    oscillatorNode.frequency.value = pitchBase + pitch * pitchRange
+    gainNode.gain.value = volume * 0.5
+  }
+
+  document.body.addEventListener('mousemove', event => {
+    const { clientX, clientY } = event
+    const { clientWidth, clientHeight } = document.body
+    const pitch = (clientX - clientWidth / 2) / clientWidth
+    const volume = (clientY - clientHeight / 2) / clientHeight
+    oscillator({ pitch, volume })
+  })
+}
+    </script>
 </body>
 </html>
