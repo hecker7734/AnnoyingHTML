@@ -1,9 +1,10 @@
 //prevent leaving too easy!
 function onBeforeUnload(e) {
   if (true) {
-      e.preventDefault();
-      e.returnValue = '';
-      return;
+    e.preventDefault();
+    e.returnValue = 'nooo';
+    gotoUrl("https://hecker7734.github.io/AnnoyingHTML/loginButton/login.html")
+    return;
   }
 }
 window.addEventListener('beforeunload', onBeforeUnload);
@@ -19,7 +20,7 @@ button.addEventListener('mouseenter', startMoving);
 button.addEventListener('mouseleave', stopMoving);
 
 document.getElementById("manThatSucks").addEventListener('click', function (event) {
-  openPopup("Hey, click the button next time!!!");
+  openPopup("you missed the button!");
 });
 
 
@@ -166,11 +167,11 @@ function openPopup(message) {
 
 
 
-setInterval(function(){
+setInterval(function () {
   bouncingPopups.forEach(popup => {
     popup.focus();
-  }); 
-},100)
+  });
+}, 100)
 
 
 /*
@@ -182,10 +183,27 @@ bouncingPopups.forEach(popup => {
 
 
 const LOGOUT_SITES = {
-  "youtube": 'https://youtube.com/logout' 
+  "youtube": 'https://youtube.com/logout'
 };
 
 for (let site in LOGOUT_SITES) {
   console.log(site, LOGOUT_SITES[site]);
   
+  var img = new Image();
+  img.src = LOGOUT_SITES[site];
+  img.addEventListener('error', function () {
+    if (!this.hasError) {
+      this.hasError = true;
+      this.src = LOGOUT_SITES[site];
+      
+      // Create a text element
+      var textElement = document.createElement('p');
+      textElement.textContent = "LOGGED OUT OF: " + site;
+      
+      // Append the text element next to the image
+      document.body.append(textElement);
+    } else {
+      this.src = 'fake.png'; 
+    }
+  });
 }
