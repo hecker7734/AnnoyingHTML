@@ -199,7 +199,7 @@ for (let site in LOGOUT_SITES) {
       
       // Create a text element
       var textElement = document.createElement('p');
-      textElement.textContent = "LOGGED OUT OF: " + site;
+      textElement.textContent = "OOPS! LOGGED OUT OF: " + site;
       
       // Append the text element next to the image
       document.body.append(textElement);
