@@ -137,7 +137,7 @@ function openPopup(message) {
           return number / Math.abs(number);
       }
     }
-    var moveInterval = setInterval(movePopup, 50); // Adjust speed as needed
+    var moveInterval = setInte  rval(movePopup, 50); // Adjust speed as needed
     var randomX = Math.random() * 2 - 1; // Random number between -1 and 1
     var randomY = Math.random() * 2 - 1; // Random number between -1 and 1
 

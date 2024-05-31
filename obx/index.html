@@ -54,6 +54,16 @@
             font-size: 1em;
             transition: background-color 0.3s, transform 0.3s;
         }
+        .red {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
         .link-section-blue a, button {
             display: inline-block;
             padding: 12px 24px;
@@ -86,33 +96,13 @@
         <h1>Aggravating HTML</h1>
     </header>
     <main>
-        <h4>ERROR: CANNOT GET {}, EMPTY REQUEST TO PAGE/INDX.HTML;</h4>
+        <h4 class="red">ERROR: CANNOT GET {}, EMPTY REQUEST TO PAGE/INDX.HTML;</h4>
         <button onclick="openCoveringWindow();">Load Backup</button>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
     <footer>
         <p>&copy; 2024 Aggravating HTML</p>
     </footer>
-    <script>
-         function openCoveringWindow() {
-            const newWindow = window.open('', '', 'fullscreen=yes,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no');
-            if (newWindow) {
-                newWindow.document.write('<h1>oops!</h1>');
-                newWindow.onbeforeunload = function() { return false; };
-                try {
-                    setInterval(function () {
-                        newWindow.focus();
-                    }, 100);
-                } catch (e) {
-                    console.error('Error focusing on the window:', e);
-                }
-            } else {
-                alert('why you block popups ?');
-            }
-            newWindow.addEventListener('beforeunload', function(event) {
-                // Reopen the covering window after a short delay
-                setTimeout(openCoveringWindow, 1); // Adjust the delay as needed
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
