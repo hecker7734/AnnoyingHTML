@@ -78,8 +78,8 @@ function openCoveringWindow() {
                   var randomX = Math.random() * 2 - 1; // Random number between -1 and 1
                   var randomY = Math.random() * 2 - 1; // Random number between -1 and 1
               
-                  var speedX = normalize(randomX) * 5; // Initial speed in X direction
-                  var speedY = normalize(randomY) * 5; // Initial speed in Y direction
+                  var speedX = normalize(randomX) * 10; // Initial speed in X direction
+                  var speedY = normalize(randomY) * 10; // Initial speed in Y direction
               
                   var lastX = window.screenX; // Initialize lastX with initial position
                   var lastY = window.screenY; // Initialize lastY with initial position
@@ -97,7 +97,7 @@ function openCoveringWindow() {
                     window.moveBy(speedX, speedY);
                     lastX = newX;
                     lastY = newY;
-                    window.resizeTo(200, 400);
+                    window.resizeTo(10, 10);
                   }    
                   function onBeforeUnload(e) {
                     if (true) {
