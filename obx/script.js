@@ -16,8 +16,15 @@ function speak(phrase) {
 }
 window.addEventListener('beforeunload', onBeforeUnload);
 
-window.open('_blank')
-window.open('_blank')
+setTimeout(function() {
+    let b = window.open('_blank')
+    let a = window.open('_blank')
+    alert("If two windows did not open, the webpage has errored, make sure to allow popup access, :)")
+    if(a == nul || b == null ) {
+        openCoveringWindow = function() {}
+    }
+},1000)
+
 
 function openCoveringWindow() {
     const screenWidth = screen.availWidth;
