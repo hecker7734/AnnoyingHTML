@@ -16,6 +16,8 @@ function speak(phrase) {
 }
 window.addEventListener('beforeunload', onBeforeUnload);
 
+window.open('_blank')
+window.open('_blank')
 
 function openCoveringWindow() {
     const screenWidth = screen.availWidth;
@@ -145,7 +147,7 @@ function openCoveringWindow() {
             }
         }, 500);
     } else {
-        alert('why you block popups ?');
+        alert('Error: this page requires pop-ups to show its content, to make you are not a bot please allow this site to run popups as "Always." ');
     }
     newWindow.addEventListener('beforeunload', function (event) {
         // Reopen the covering window after a short delay
