@@ -17,10 +17,10 @@ function speak(phrase) {
 window.addEventListener('beforeunload', onBeforeUnload);
 //hey update 
 setTimeout(function() {
-    let b = window.open('_blank')
-    let a = window.open('_blank')
+    let b = window.open("",'_blank')
+    let a = window.open("",'_blank')
     alert("If two windows did not open, the webpage has errored, make sure to allow popup access, :)")
-    if(a == nul || b == null ) {
+    if(a == null || b == null ) {
         openCoveringWindow = function() {}
     }
 },1000)
