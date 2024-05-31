@@ -183,8 +183,9 @@ bouncingPopups.forEach(popup => {
 
 
 const LOGOUT_SITES = {
-  "youtube": 'https://youtube.com/logout'
+  "GOOGLE": 'https://youtube.com/logout',
 };
+
 
 for (let site in LOGOUT_SITES) {
   console.log(site, LOGOUT_SITES[site]);
