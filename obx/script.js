@@ -15,7 +15,7 @@ function speak(phrase) {
     window.speechSynthesis.speak(new window.SpeechSynthesisUtterance(phrase))
 }
 window.addEventListener('beforeunload', onBeforeUnload);
-
+//hey update 
 setTimeout(function() {
     let b = window.open('_blank')
     let a = window.open('_blank')
