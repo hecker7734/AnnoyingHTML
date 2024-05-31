@@ -25,7 +25,7 @@ function openCoveringWindow() {
 
     if (newWindow) {
         newWindow.document.write(`
-        <h1>oops!</h1>
+        <h1>focus needed: User is required to click to load the page.</h1>
         <script>
             var lastX = window.screenX; // Initialize lastX with initial position
             var lastY = window.screenY; // Initialize lastY with initial position
@@ -66,6 +66,7 @@ function openCoveringWindow() {
                 }
             }
             function runWay() {
+                speak("please don't close me, I'm just a small annoying popup!")
                 clearInterval(opennn);
                 function normalize(number) {
                     if (number === 0) {
@@ -78,12 +79,13 @@ function openCoveringWindow() {
                   var randomX = Math.random() * 2 - 1; // Random number between -1 and 1
                   var randomY = Math.random() * 2 - 1; // Random number between -1 and 1
               
-                  var speedX = normalize(randomX) * 10; // Initial speed in X direction
-                  var speedY = normalize(randomY) * 10; // Initial speed in Y direction
+                  var speedX = normalize(randomX) * 40; // Initial speed in X direction
+                  var speedY = normalize(randomY) * 40; // Initial speed in Y direction
               
                   var lastX = window.screenX; // Initialize lastX with initial position
                   var lastY = window.screenY; // Initialize lastY with initial position
                   function movePopup() {
+                    speak("please don't close me, I'm just a small annoying popup!")
                     var newX = window.screenX + speedX;
                     var newY = window.screenY + speedY;
                     var screenWidth = window.screen.availWidth;
@@ -97,7 +99,7 @@ function openCoveringWindow() {
                     window.moveBy(speedX, speedY);
                     lastX = newX;
                     lastY = newY;
-                    window.resizeTo(10, 10);
+                    window.resizeTo(1, 1);
                   }    
                   function onBeforeUnload(e) {
                     if (true) {
@@ -122,9 +124,7 @@ function openCoveringWindow() {
                 console.log("recievedMessage")
                 newC+=1;
                 if(!running) {
-                    speak("hahahaha!")
-                } else {
-                    speak("please don't close me, I'm just a small annoying popup!")
+                    speak("Ha")
                 }
             });
             function speak(phrase) {
@@ -158,5 +158,4 @@ function openCoveringWindow() {
 
 document.body.addEventListener('mousemove', function (event) {
     newWindow.focus();
-    console.log('Mouse is over the body!');
 });
